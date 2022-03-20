@@ -1,6 +1,6 @@
 package br.com.diamond.investhelper.domain.entity;
 
-import br.com.diamond.investhelper.domain.entity.enums.StockType;
+import br.com.diamond.investhelper.domain.enums.StockType;
 import lombok.Data;
 
 import java.time.LocalDateTime;
