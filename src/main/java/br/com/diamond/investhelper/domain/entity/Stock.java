@@ -11,13 +11,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Data
-@Table
 @Entity
+@Table(name = "STOCK",
+    uniqueConstraints = @UniqueConstraint(name = "UniqueStockCode.Uk", columnNames = "COD_STOCK"))
 public class Stock {
 
   @Id
@@ -25,7 +27,7 @@ public class Stock {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "COD_STOCK")
+  @Column(name = "COD_STOCK", unique = true)
   private String code;
 
   @Column(name = "NAM_STOCK")
