@@ -37,6 +37,9 @@ public class Stock {
   @Column(name = "NAM_DEPARTMENT")
   private String department;
 
+  @Column(name = "PRICE")
+  private Double price;
+
   @CreationTimestamp
   @Column(name = "DAT_CREATE")
   private LocalDateTime datCreate;
