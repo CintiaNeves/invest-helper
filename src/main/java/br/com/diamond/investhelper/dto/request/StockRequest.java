@@ -10,4 +10,10 @@ public class StockRequest {
   @NotEmpty
   private String code;
 
+  @NotEmpty
+  private String name;
+
+  @NotEmpty
+  private String stockType;
+
 }
