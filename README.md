@@ -5,7 +5,8 @@
 #### 🚧 Building...  🚧
 
 ### Features
-- [] Financial stocks register
+- [x] Registers
+- [x] Quotes
 
 ### 🛠 Technologies
 

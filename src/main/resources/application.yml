@@ -1,0 +1,43 @@
+spring:
+  h2:
+    console:
+      path: /h2_console
+      enabled: true
+  datasource:
+    url: jdbc:h2:file:~/invest-helper
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
+
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+  error:
+    include-message: always
+
+feign:
+  client:
+    config:
+      default:
+        logger-level: BASIC
+        retry:
+          maxAttempts: 3
+          maxPeriod: 1000
+          period: 1000
+        connectTimeout: 30000
+        readTimeout: 30000
+
+client:
+  alpha-vantage-api:
+    url: https://www.alphavantage.co
+    function: GLOBAL_QUOTE
+    key: 6VT6V81RPJDBW7G3
+    suffix: .SA
