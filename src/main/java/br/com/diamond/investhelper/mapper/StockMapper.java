@@ -11,9 +11,9 @@ import org.mapstruct.Mapping;
 public interface StockMapper {
 
   @Mapping(target = "id", ignore = true)
-  @Mapping(target = "name", ignore = true)
-  @Mapping(target = "stockType", ignore = true)
-  @Mapping(target = "department", ignore = true)
+  @Mapping(target = "name")
+  @Mapping(target = "stockType")
+  @Mapping(target = "department")
   @Mapping(target = "price", ignore = true)
   @Mapping(target = "datCreate", ignore = true)
   @Mapping(target = "datUpdate", ignore = true)

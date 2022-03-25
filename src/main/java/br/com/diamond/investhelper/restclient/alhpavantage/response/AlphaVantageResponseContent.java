@@ -1,4 +1,4 @@
-package br.com.diamond.investhelper.client.alhpavantage.response;
+package br.com.diamond.investhelper.restclient.alhpavantage.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

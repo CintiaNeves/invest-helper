@@ -3,6 +3,7 @@ package br.com.diamond.investhelper.domain.entity;
 import br.com.diamond.investhelper.domain.enums.StockType;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -40,7 +41,7 @@ public class Stock {
   private String department;
 
   @Column(name = "PRICE")
-  private Double price;
+  private BigDecimal price;
 
   @CreationTimestamp
   @Column(name = "DAT_CREATE")

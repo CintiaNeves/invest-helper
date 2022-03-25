@@ -1,4 +1,4 @@
-package br.com.diamond.investhelper.client.config;
+package br.com.diamond.investhelper.restclient.config;
 
 import feign.Request;
 import feign.RetryableException;

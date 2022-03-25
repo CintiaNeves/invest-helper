@@ -16,4 +16,7 @@ public class StockRequest {
   @NotEmpty
   private String stockType;
 
+  @NotEmpty
+  private String department;
+
 }

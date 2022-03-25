@@ -13,8 +13,11 @@ public class StockServiceImpl implements StockService {
 
   private final StockRepository stockRepository;
 
+  private final AlphaVantageApiServiceImpl alphaVantageApiService;
+
   @Override
   public Stock create(Stock stock) {
+    stock.setPrice(alphaVantageApiService.retrieveStockPrice(stock.getCode()));
     return stockRepository.save(stock);
   }
 }

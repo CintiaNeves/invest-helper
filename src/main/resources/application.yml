@@ -40,3 +40,4 @@ client:
     url: https://www.alphavantage.co
     function: GLOBAL_QUOTE
     key: 6VT6V81RPJDBW7G3
+    suffix: .SA
