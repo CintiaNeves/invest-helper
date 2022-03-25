@@ -22,3 +22,21 @@ server:
     context-path: /api
   error:
     include-message: always
+
+feign:
+  client:
+    config:
+      default:
+        logger-level: BASIC
+        retry:
+          maxAttempts: 3
+          maxPeriod: 1000
+          period: 1000
+        connectTimeout: 30000
+        readTimeout: 30000
+
+client:
+  alpha-vantage-api:
+    url: https://www.alphavantage.co
+    function: GLOBAL_QUOTE
+    key: 6VT6V81RPJDBW7G3
