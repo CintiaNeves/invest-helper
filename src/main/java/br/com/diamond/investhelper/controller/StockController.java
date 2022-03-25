@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import br.com.diamond.investhelper.client.alhpavantage.AlphaVantageApiClient;
 import br.com.diamond.investhelper.dto.request.StockRequest;
 import br.com.diamond.investhelper.dto.response.StockResponse;
 import br.com.diamond.investhelper.mapper.StockMapper;
@@ -24,8 +25,13 @@ public class StockController {
 
   private final StockService stockService;
 
+  private final AlphaVantageApiClient alphaVantageApiClient;
+
   @PostMapping
   public ResponseEntity<StockResponse> create(@Valid @RequestBody final StockRequest stockRequest) {
+
+    final var response = alphaVantageApiClient
+        .get("GLOBAL_QUOTE", "MGLU3.SA", "6VT6V81RPJDBW7G3");
 
     final var stock = stockService.create(stockMapper.stockFromRequest(stockRequest));
     final var uri = ServletUriComponentsBuilder.fromCurrentRequestUri()
